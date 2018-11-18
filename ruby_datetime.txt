@@ -1,0 +1,22 @@
+#ruby 2.3.1
+require 'date'
+puts "Hello, world!"
+
+utc = '1393929394'
+
+puts Time.at(utc.to_i).to_date      # ------------- uses local timezone
+
+puts Time.at(utc.to_i).to_time 
+ 
+puts DateTime.strptime(utc, '%s')   # --------------- uses UTC timezone
+
+puts DateTime.strptime(utc,'%s').strftime("%d/%m/%Y")
+
+puts DateTime.strptime(utc,'%s').strftime("%H:%M:%S")
+
+Hello, world!
+2014-03-04
+2014-03-04 11:36:34 +0100
+2014-03-04T10:36:34+00:00
+04/03/2014
+10:36:34
